@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptionist Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="Receptionist.js" defer></script>
+    <link rel="stylesheet" href="receptionist.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Receptionist Management</h1>
+            <p class="subtitle">Manage receptionist information and records</p>
+        </header>
+
+        <div class="button-container">
+            <div class="card" onclick="addReceptionist()">
+                <h2>Add Receptionist</h2>
+                <p>Register new receptionist information</p>
+            </div>
+            
+            <div class="card" onclick="searchReceptionist()">
+                <h2>Search Receptionist</h2>
+                <p>Find receptionist details</p>
+            </div>
+            
+            <div class="card" onclick="updateReceptionist()">
+                <h2>Update Receptionist</h2>
+                <p>Modify existing receptionist records</p>
+            </div>
+            
+            <div class="card" onclick="deleteReceptionist()">
+                <h2>Delete Receptionist</h2>
+                <p>Remove receptionist from the system</p>
+            </div>
+        </div>
+
+        <div id="formArea" class="form-container"></div>
+        <div id="resultArea" class="result-container"></div>
+    </div>
+</body>
+</html>
