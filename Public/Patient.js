@@ -1,3 +1,19 @@
+async function showPatients() {
+const response = await fetch('http://localhost:3000/patients');
+const data = await response.json();
+
+const patientHTML = data.map((patient)=>
+    ` <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+            <h3>${patient.Name}</h3>
+            <p><strong>Patient Type:</strong> ${patient.Patient_Type}</p>
+            <p><strong>Contact:</strong> ${patient.Contact}</p>
+            <p><strong>ID:</strong> ${patient.Patient_ID}</p>
+        </div>`
+).join('');
+document.getElementById('all-patients').innerHTML = patientHTML;
+
+}
+showPatients();
 // Add Patient
 function addPatient() {
     document.getElementById('formArea').innerHTML = `

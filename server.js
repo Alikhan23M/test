@@ -34,7 +34,14 @@ db.connect((err) => {
 
 // Now you can use 'db' to interact with the database in your routes
 
-// Get all doctors
+// Get all patient
+
+app.get('/patients', (req, res) => {
+    db.query("SELECT * FROM patient", (err, result) => {
+        if (err) throw err;
+        res.json(result);
+    });
+});
 
 
 // ------------------ Patient CRUD -------------------

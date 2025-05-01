@@ -1,15 +1,21 @@
 async function showDoctors() {
     const response = await fetch('http://localhost:3000/doctors');
     const data = await response.json();
-    // console.log(data);
-    document.getElementById('all-doctors').innerHTML = data.map((doctor)=>{
-       
-        
-        
-    });
-    
+
+    const doctorsHTML = data.map(doctor => `
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+            <h3>${doctor.Name}</h3>
+            <p><strong>Specialization:</strong> ${doctor.Specialization}</p>
+            <p><strong>Contact:</strong> ${doctor.Contact}</p>
+            <p><strong>ID:</strong> ${doctor.Doctor_ID}</p>
+        </div>
+    `).join('');
+
+    document.getElementById('all-doctors').innerHTML = doctorsHTML;
 }
+
 showDoctors();
+
 // Add Doctor
 function addDoctor() {
     document.getElementById('formArea').style.display = "block";
